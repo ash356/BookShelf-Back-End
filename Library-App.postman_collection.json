@@ -1,0 +1,903 @@
+{
+	"info": {
+		"_postman_id": "f5791e68-ee3d-4798-96d8-c28470b9cde8",
+		"name": "Library-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"userName\": \"Ahmed\",\r\n      \"email\": \"ashourahmed2030@gmail.com\",\r\n      \"password\": \"Ahmed@1234\",\r\n      \"cPassword\":\"Ahmed@1234\",\r\n      \"studentId\":1234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/sign-up",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\": \"ashourahmed2030@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/forgetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\": \"ashourahmed2030@gmail.com\",\r\n      \"resetCode\":\"0Jtxwa\",\r\n      \"newPassword\":\"Test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashourahmed2030@gmail.com\",\r\n      \"password\": \"Test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/log-in",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"log-in"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDZmMDczZTljOTNlMzlmNzhkOWQxMiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4MTc2Mzc0LCJleHAiOjE2NzgyNjI3NzR9.aQMyxl6-z82WF2L7qx7KrTQPxbw49SH8FinYDZiKhRM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Share Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDZmMDczZTljOTNlMzlmNzhkOWQxMiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4MTc2Mzc0LCJleHAiOjE2NzgyNjI3NzR9.aQMyxl6-z82WF2L7qx7KrTQPxbw49SH8FinYDZiKhRM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/profile/640c37e561165d92370e66ed",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"profile",
+								"640c37e561165d92370e66ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cover Pic",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMzN2U1NjExNjVkOTIzNzBlNjZlZCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NjQ4MTE5LCJleHAiOjE2Nzg3MzQ1MTl9.b0I4PZc7GQUmJF8nIPWDHC4GBeowT2k9K89wrXW8ydA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/Ashour/Desktop/Ahmed_Ashour_EHR_2d_logo_laptop_in_hospital_using_electronic_he_344397ba-272d-4389-9ffb-8c6b1c6ce62b.png",
+										"/C:/Users/Ashour/Desktop/Ahmed_Ashour_logo__EHR_letters_using_hospital__artificial_intel_2db3e5d0-300d-4bc7-89f0-206198df67c1.png",
+										"/C:/Users/Ashour/Desktop/MR_H4X_future_technology_pc_f814c18f-6b74-428e-be32-5256c258a9fc.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/user/coverPic",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"coverPic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Pic",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMzN2U1NjExNjVkOTIzNzBlNjZlZCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NjQ4MTE5LCJleHAiOjE2Nzg3MzQ1MTl9.b0I4PZc7GQUmJF8nIPWDHC4GBeowT2k9K89wrXW8ydA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ashour/Desktop/200.gif"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/user/profilePic",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"profilePic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Picture",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMzN2U1NjExNjVkOTIzNzBlNjZlZCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NjQ4MTE5LCJleHAiOjE2Nzg3MzQ1MTl9.b0I4PZc7GQUmJF8nIPWDHC4GBeowT2k9K89wrXW8ydA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ashour/Desktop/200.gif"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/user/profilePicture",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"profilePicture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cover Picture",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMzN2U1NjExNjVkOTIzNzBlNjZlZCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NjQ4MTE5LCJleHAiOjE2Nzg3MzQ1MTl9.b0I4PZc7GQUmJF8nIPWDHC4GBeowT2k9K89wrXW8ydA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ashour/Desktop/200.gif"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/user/coverPicture",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"coverPicture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Home",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjljMTI3YmUxYTJmZTQ0ZGRmOTAwNCIsImlzTG9nZ2VkSW4iOnRydWUsImlhdCI6MTY3NzMxNjk2NSwiZXhwIjoxNjc3MzIwNTY1fQ.GY6Zu6IJkyrGjSJfMmoIspK19iqkKYj_pbImq1RCzHk",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/home",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Image",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjljMTI3YmUxYTJmZTQ0ZGRmOTAwNCIsImlzTG9nZ2VkSW4iOnRydWUsImlhdCI6MTY3NzMxNjk2NSwiZXhwIjoxNjc3MzIwNTY1fQ.GY6Zu6IJkyrGjSJfMmoIspK19iqkKYj_pbImq1RCzHk",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/uploads/user/profilePic/hdAumAC9r0GvJHKN09b3F-200.gif",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"uploads",
+								"user",
+								"profilePic",
+								"hdAumAC9r0GvJHKN09b3F-200.gif"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDdjNTFhNjQ0MTAyYWE4MjNmMjE1NiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4MjMwODMwLCJleHAiOjE2NzgzMTcyMzB9.UaBIsBYrwv1uZfuvRNrcRP6SmoGdyI0IirFulZ3f6Cc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Very Goog\",\r\n    \"phone\": \"+02012345678988\",\r\n    \"status\":\"OfLine\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMzN2U1NjExNjVkOTIzNzBlNjZlZCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NjY0NDgzLCJleHAiOjE2Nzg3NTA4ODN9.IErsjDDNFIw7kXNMITgojPUwMT8wuRk42PclyKbAWbw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"Omar@1234\",\r\n    \"password\":\"Omar@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user/password",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDZmMDczZTljOTNlMzlmNzhkOWQxMiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTE2NjY0LCJleHAiOjE2Nzg2MDMwNjR9._ujJxg2ENmzuYD-XBev3rjXenotaNlbPT4r6J8ddzcA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMxNGYxOWFkNWRmZjA0ZTJmNDI0OCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTE3MzgxLCJleHAiOjE2Nzg2MDM3ODF9.jqx6WEurN_I9sp051xazD5ZEZtutX_vYY7tRU42_K3w",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user/softDelete",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"softDelete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Ashour/Desktop/1.png"
+								},
+								{
+									"key": "bookName",
+									"value": "C++",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/add",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrow",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMxNGYxOWFkNWRmZjA0ZTJmNDI0OCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTE3MzgxLCJleHAiOjE2Nzg2MDM3ODF9.jqx6WEurN_I9sp051xazD5ZEZtutX_vYY7tRU42_K3w",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\":\"NOdejs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/borrow/640c15119ad5dff04e2f4250",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"borrow",
+								"640c15119ad5dff04e2f4250"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calc Fine",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGMxNGYxOWFkNWRmZjA0ZTJmNDI0OCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTEzNDAzLCJleHAiOjE2Nzg1OTk4MDN9.dpCM19bgs2XFjXupDtFRlgD9nWgLDPvXxDdNm5bGLQQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/fine/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"fine",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDZmMDczZTljOTNlMzlmNzhkOWQxMiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4MjMzNDA5LCJleHAiOjE2NzgzMTk4MDl9.NOrOxkB_Yd6NUXuDHUJjE9DXoZHWoL7CMOgngPsacgQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\":\"NOdejs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/delete/6407c7e1ddbfb68d607e6b71",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"delete",
+								"6407c7e1ddbfb68d607e6b71"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDZmMDczZTljOTNlMzlmNzhkOWQxMiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTExNjcwLCJleHAiOjE2Nzg1OTgwNzB9.t-gaXBakwD8Grhdysg2ltl-I2RsjHX5yY6epbCQelNI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\":\"NOdejs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/return/640bfacf804e4237a02edc68",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"return",
+								"640bfacf804e4237a02edc68"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGJmYjhhMTU0ZGRlNTI1ZjhmNDY3MCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTA2OTAwLCJleHAiOjE2Nzg1OTMzMDB9.C5oATDEzYencYIuodmBAWIOi1yhSCPqyLdTX69ciOZE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjlkN2YyYjM0Y2Q3MTE0ZTcwZGM1MiIsImlzTG9nZ2VkSW4iOnRydWUsImlhdCI6MTY3NzQzNTQxMSwiZXhwIjoxNjc3NDM5MDExfQ.evg0UZHuR4lM4gU4PZHO6RnEU809xlwZ976yBLJ1PuM",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Free Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDAwNDFjMWNmYzdkZmJjZDcxYmI1YyIsImlzTG9nZ2VkSW4iOnRydWUsImlhdCI6MTY3NzcyOTc3MSwiZXhwIjoxNjc3NzMzMzcxfQ.77nLuw2wr0owjujJa8DT5xRqlEH5_ekTHJqywtXxV8s",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/free",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"free"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrowed Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGJmYjhhMTU0ZGRlNTI1ZjhmNDY3MCIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4NTA2OTAwLCJleHAiOjE2Nzg1OTMzMDB9.C5oATDEzYencYIuodmBAWIOi1yhSCPqyLdTX69ciOZE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/borrowed",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"borrowed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Library_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDZmMDczZTljOTNlMzlmNzhkOWQxMiIsImlzTG9nZ2VkSW4iOnRydWUsInJ1bGUiOiJVc2VyIiwiaWF0IjoxNjc4MjMzNDA5LCJleHAiOjE2NzgzMTk4MDl9.NOrOxkB_Yd6NUXuDHUJjE9DXoZHWoL7CMOgngPsacgQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/book/6407c7e1ddbfb68d607e6b71",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"6407c7e1ddbfb68d607e6b71"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
